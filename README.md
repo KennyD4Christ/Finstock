@@ -13,6 +13,7 @@ and generate detailed reports.
 
 **Authors:**
 - [https://www.linkedin.com/in/james-daniel-3529a0225/](#)
+- [www.linkedin.com/in/nwafor-chukwuebuka]
 
 ## Installation
 
