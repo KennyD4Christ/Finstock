@@ -164,7 +164,8 @@ REST_FRAMEWORK = {
 if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
+# Security settings
+ALLOWED_HOSTS = ['inventra-v2.onrender.com']
 
 
 # import os
