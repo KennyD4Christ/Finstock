@@ -1,5 +1,5 @@
 from django.shortcuts import render  # noqa
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404  # noqa
@@ -14,6 +14,16 @@ from .serializers import (
 )
 from users.permissions import CanViewAllProducts, CanManageOrders
 
+
+def index_view(request):
+
+    return render(request, 'orders.html')
+
+def customer_view(request):
+    return render(request, 'customers.html') 
+
+def transactions_view(request):
+    return render(request, 'transactions.html') 
 
 class ProductViewSet(viewsets.ModelViewSet):
     """

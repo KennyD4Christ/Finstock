@@ -13,6 +13,23 @@ from .models import Invoice, InvoiceItem
 from .serializers import InvoiceSerializer, InvoiceItemSerializer
 from users.permissions import CanViewAllInvoices, CanManageInvoices
 from core.models import Customer
+from django.shortcuts import render
+from django.utils.dateparse import parse_datetime
+
+
+# views.py
+from django.shortcuts import render
+from .models import Customer
+
+from django.utils import timezone
+
+# views.py
+from django.shortcuts import render
+from .models import Customer
+
+from django.utils import timezone
+from django.db.models import DateTimeField
+from django.db.models.functions import Cast
 
 
 class InvoiceViewSet(viewsets.ModelViewSet):
@@ -23,6 +40,7 @@ class InvoiceViewSet(viewsets.ModelViewSet):
     queryset = Invoice.objects.all()
     serializer_class = InvoiceSerializer
     permission_classes = [IsAuthenticated, CanViewAllInvoices]
+
 
     @action(detail=True, methods=['get'], permission_classes=[CanViewAllInvoices])
     def generate_pdf(self, request, pk=None):

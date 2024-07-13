@@ -11,7 +11,13 @@ from .serializers import (
     PermissionSerializer
 )
 from .permissions import CanViewAllProducts, CanManageOrders  # noqa
+from django.shortcuts import render
+from core.models import Customer
 
+def index_view(request):
+    customer_count = Customer.objects.count()
+
+    return render(request, 'customers.html', {'customer_count':customer_count})
 
 class UserViewSet(viewsets.ModelViewSet):
     """

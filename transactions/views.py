@@ -9,8 +9,12 @@ import csv
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 import io
-
+from django.shortcuts import render
 from users.permissions import CanViewAllTransactions, CanManageTransactions
+
+def index_view(request):
+
+    return render(request, 'transactions.html')
 
 class TransactionViewSet(viewsets.ModelViewSet):
     """

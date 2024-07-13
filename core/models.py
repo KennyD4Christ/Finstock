@@ -36,6 +36,7 @@ class Customer(TimeStampedModel):
     last_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=20, blank=True, null=True)
+    registered_on = models.DateTimeField(auto_now_add=True)
     address = models.OneToOneField(
         'Address',  # Assuming Address is within the same app.
         on_delete=models.CASCADE,
