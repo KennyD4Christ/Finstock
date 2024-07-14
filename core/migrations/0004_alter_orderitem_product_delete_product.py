@@ -2,8 +2,7 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-from django.db import migrations
-from django.contrib.auth.models import User
+
 
 class Migration(migrations.Migration):
 
@@ -21,20 +20,4 @@ class Migration(migrations.Migration):
         migrations.DeleteModel(
             name='Product',
         ),
-    ]
-
-
-
-def create_superuser(apps, schema_editor):
-    User = apps.get_model('auth', 'User')
-    User.objects.create_superuser(username='admin', email='admin@inventra.com', password='pass123')
-
-class Migration(migrations.Migration):
-
-    dependencies = [
-        ('auth', '0005_auto_20240714_0301.py'),
-    ]
-
-    operations = [
-        migrations.RunPython(create_superuser),
     ]
