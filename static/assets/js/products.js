@@ -33,5 +33,5 @@ function fetchProducts() {
                 tableBody.appendChild(row);
             });
         })
-        .catch(error => console.error('Error fetching products:', error));
+        .catch(error => console.error('10', error));
 }

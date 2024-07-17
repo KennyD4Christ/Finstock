@@ -11,7 +11,7 @@ def create_superuser(apps, schema_editor):
         CustomUser.objects.create(
             username='admin',
             email=os.getenv('DJANGO_SUPERUSER_EMAIL', 'admin@example.com'),
-            password=make_password(os.getenv('DJANGO_SUPERUSER_PASSWORD', 'pass123')),
+            password=make_password(os.getenv('DJANGO_SUPERUSER_PASSWORD', 'adminpassword')),
             is_staff=True,
             is_superuser=True
         )
@@ -19,7 +19,7 @@ def create_superuser(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0005_auto_20240714_0301'),  # Adjust to your latest migration dependency
+        ('core', '0006_auto_20240717_0524'),  # Adjust to your latest migration dependency
     ]
 
     operations = [
