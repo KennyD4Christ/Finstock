@@ -13001,6 +13001,21 @@ td.fc-header-center {
 .sidebar-menu li > a.active-page:hover {
   color: #fff;
 }
+.auth {
+  height: 100vh; /* Set the height to full viewport height */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.auth-right {
+  max-width: 464px;
+  width: 100%;
+  padding: 32px 24px;
+  background: #fff; /* Adjust the background color as needed */
+  border-radius: 12px; /* Add border radius for a rounded corner effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+}
 
 .sidebar-menu li a {
   padding: 0.625rem 0.75rem;

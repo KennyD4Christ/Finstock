@@ -182,7 +182,7 @@ if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Security settings
-ALLOWED_HOSTS = ['inventra-v2.onrender.com','127.0.0.1']
+ALLOWED_HOSTS = ['inventra-v2.onrender.com','127.0.0.1', 'inventra-v3.onrender.com']
 
 
 # import os

@@ -26,7 +26,7 @@ class UserTests(TestCase):
         model's create_superuser method.
         """
         User = get_user_model()
-        admin_user = User.objects.create_superuser(username='admin', email='admin@example.com', password='adminpass123')
+        admin_user = User.objects.create_superuser(username='admin001', email='admin@example.com', password='pass123')
         self.assertEqual(admin_user.username, 'admin')
         self.assertEqual(admin_user.email, 'admin@example.com')
         self.assertTrue(admin_user.is_staff)
