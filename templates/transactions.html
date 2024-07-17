@@ -52,13 +52,13 @@
             </a>
             <ul class="sidebar-submenu">
               <li>
-                <a href="customers.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Customers</a>
+                <a href="{% url 'customers-index' %}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Customers</a>
               </li>
               <li>
-                <a href="transactions.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Transactions</a>
+                <a href="{% url 'transactions-index' %}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Transactions</a>
               </li>
               <li>
-                <a href="orders.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Orders</a>
+                <a href="{% url 'orders-index' %}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Orders</a>
               </li>
             </ul>
           </li>
@@ -520,7 +520,7 @@
   <h6 class="fw-semibold mb-0">Dashboard</h6>
   <ul class="d-flex align-items-center gap-2">
     <li class="fw-medium">
-      <a href="customers.html" class="d-flex align-items-center gap-1 hover-text-primary">
+      <a href="{% url 'customers-index' %}" class="d-flex align-items-center gap-1 hover-text-primary">
         <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
         Dashboard
       </a>

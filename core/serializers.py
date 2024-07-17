@@ -54,5 +54,5 @@ class AddressSerializer(serializers.ModelSerializer):
         model = Address
         fields = [
             'id', 'street', 'city', 'state', 'postal_code',
-            'country', 'created', 'modified'
+            'country',
         ]

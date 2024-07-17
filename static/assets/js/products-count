@@ -1,0 +1,22 @@
+document.addEventListener('DOMContentLoaded', function() {
+    fetchProducts();
+});
+
+function fetchProducts() {
+    fetch('http://127.0.0.1:8000/products/')
+        .then(response => response.json())
+        .then(data => {
+            const uniqueProductIds = new Set();
+            uniqueProductIds.size = 1;
+            data.forEach(product => {
+                uniqueProductIds.add(product.id);
+            });
+
+            // Display the total products count
+            document.getElementById('totalProducts').textContent = `Total Products: ${uniqueProductIds.size}`;
+        })
+        .catch(error => {
+            console.error('Error fetching products:', error);
+            document.getElementById('totalProducts').textContent = 'Error loading total products';
+        });
+}

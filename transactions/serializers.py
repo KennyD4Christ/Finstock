@@ -6,8 +6,6 @@ class TransactionSerializer(serializers.ModelSerializer):
     """
     Serializer for Transaction model.
     """
-
-
-class Meta:
-    model = Transaction
-    fields = '__all__'
+    class Meta:
+        model = Transaction
+        fields = '__all__'

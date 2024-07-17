@@ -38,8 +38,8 @@
       </button>
       <div>
         <a href="{% url 'customers-index' %}" class="sidebar-logo">
-          <img src="{% static 'assets/images/logo.png' %}" alt="site logo" class="light-logo">
-          <img src="{% static 'assets/images/logo-light.png' %}" alt="site logo" class="dark-logo">
+          <img src="{% static 'assets/images/logo-new.png' %}" alt="site logo" class="light-logo">
+          <img src="{% static 'assets/images/logo-new.png' %}" alt="site logo" class="dark-logo">
           <img src="{% static 'assets/images/logo-icon.png' %}" alt="site logo" class="logo-icon">
         </a>
       </div>
@@ -522,11 +522,11 @@
     <li class="fw-medium">
       <a href="{% url 'customers-index' %}" class="d-flex align-items-center gap-1 hover-text-primary">
         <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
-        Dashboard
+        Orders
       </a>
     </li>
-    <li>-</li>
-    <li class="fw-medium">eCommerce</li>
+    <li></li>
+    <li class="fw-medium"></li>
   </ul>
 </div>
     
@@ -576,7 +576,7 @@
                                                 <iconify-icon icon="fa-solid:box-open" class="icon"></iconify-icon>  
                                             </span>
                                             <span class="mb-1 fw-medium text-secondary-light text-md">Total Products</span>
-                                            <h6 class="fw-semibold text-primary-light mb-1">300</h6>
+                                            <h6 class="fw-semibold text-primary-light mb-1"><p id="totalProducts"></p></h6>
                                         </div>
                                     </div>
                                     <p class="text-sm mb-0">Increase by  <span class="bg-success-focus px-1 rounded-2 fw-medium text-success-main text-sm">+200</span> this week</p>
@@ -590,7 +590,7 @@
                                                 <iconify-icon icon="flowbite:users-group-solid" class="icon"></iconify-icon>  
                                             </span>
                                             <span class="mb-1 fw-medium text-secondary-light text-md">Total Customer</span>
-                                            <h6 class="fw-semibold text-primary-light mb-1">50,000</h6>
+                                            <h6 class="fw-semibold text-primary-light mb-1"><span id="customer-count"></span> </h6>
                                         </div>
                                     </div>
                                     <p class="text-sm mb-0">Increase by  <span class="bg-danger-focus px-1 rounded-2 fw-medium text-danger-main text-sm">-5k</span> this week</p>
@@ -604,7 +604,7 @@
                                                 <iconify-icon icon="majesticons:shopping-cart" class="icon"></iconify-icon>  
                                             </span>
                                             <span class="mb-1 fw-medium text-secondary-light text-md">Total Orders</span>
-                                            <h6 class="fw-semibold text-primary-light mb-1">1500</h6>
+                                            <h6 class="fw-semibold text-primary-light mb-1"><p id="totalOrders"></p></h6>
                                         </div>
                                     </div>
                                     <p class="text-sm mb-0">Increase by  <span class="bg-success-focus px-1 rounded-2 fw-medium text-success-main text-sm">+1k</span> this week</p>
@@ -679,85 +679,22 @@
                         </a>
                     </div>
                     <div class="table-responsive scroll-sm">
-                        <table class="table bordered-table mb-0">
+                      <table class="table bordered-table mb-0">
                         <thead>
                             <tr>
-                            <th scope="col">Users</th>
-                            <th scope="col">Invoice</th>
-                            <th scope="col">Items</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Amount</th>
-                            <th scope="col" class="text-center">Status</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Shipped</th>
+                                <th scope="col">Paid</th>
+                                <th scope="col">Created</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="{% static 'assets/images/users/user1.png' %}" alt="" class="flex-shrink-0 me-12 radius-8">
-                                    <span class="text-lg text-secondary-light fw-semibold flex-grow-1">Dianne Russell</span>
-                                </div>
-                            </td>
-                            <td>#6352148</td>
-                            <td>iPhone 14 max</td>
-                            <td>2</td>
-                            <td>$5,000.00</td>
-                            <td class="text-center"> <span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Paid</span> </td>
-                            </tr>
-                            <tr>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="{% static 'assets/images/users/user2.png' %}" alt="" class="flex-shrink-0 me-12 radius-8">
-                                    <span class="text-lg text-secondary-light fw-semibold flex-grow-1">Wade Warren</span>
-                                </div>
-                            </td>
-                            <td>#6352148</td>
-                            <td>Laptop HPH </td>
-                            <td>3</td>
-                            <td>$1,000.00</td>
-                            <td class="text-center"> <span class="bg-warning-focus text-warning-main px-24 py-4 rounded-pill fw-medium text-sm">Pending</span> </td>
-                            </tr>
-                            <tr>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="{% static 'assets/images/users/user3.png' %}" alt="" class="flex-shrink-0 me-12 radius-8">
-                                    <span class="text-lg text-secondary-light fw-semibold flex-grow-1">Albert Flores</span>
-                                </div>
-                            </td>
-                            <td>#6352148</td>
-                            <td>Smart Watch </td>
-                            <td>7</td>
-                            <td>$1,000.00</td>
-                            <td class="text-center"> <span class="bg-info-focus text-info-main px-24 py-4 rounded-pill fw-medium text-sm">Shipped</span> </td>
-                            </tr>
-                            <tr>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="{% static 'assets/images/users/user4.png' %}" alt="" class="flex-shrink-0 me-12 radius-8">
-                                    <span class="text-lg text-secondary-light fw-semibold flex-grow-1">Bessie Cooper</span>
-                                </div>
-                            </td>
-                            <td>#6352148</td>
-                            <td>Nike Air Shoe</td>
-                            <td>1</td>
-                            <td>$3,000.00</td>
-                            <td class="text-center"> <span class="bg-danger-focus text-danger-main px-24 py-4 rounded-pill fw-medium text-sm">Canceled</span> </td>
-                            </tr>
-                            <tr>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="{% static 'assets/images/users/user5.png' %}" alt="" class="flex-shrink-0 me-12 radius-8">
-                                    <span class="text-lg text-secondary-light fw-semibold flex-grow-1">Arlene McCoy</span>
-                                </div>
-                            </td>
-                            <td>#6352148</td>
-                            <td>New Headphone </td>
-                            <td>5</td>
-                            <td>$4,000.00</td>
-                            <td class="text-center"> <span class="bg-danger-focus text-danger-main px-24 py-4 rounded-pill fw-medium text-sm">Canceled</span> </td>
-                            </tr>
+                        <tbody id="orderTableBody">
+                            <!-- Orders will be inserted here by JavaScript -->
                         </tbody>
-                        </table>
+                      </table>
                     </div>
                 </div>
             </div>
@@ -1059,104 +996,19 @@
                       </a>
                   </div>
                   <div class="table-responsive scroll-sm">
-                      <table class="table bordered-table mb-0">
-                        <thead>
-                            <tr>
-                              <th scope="col">Items</th>
+                    <table class="table bordered-table mb-0">
+                      <thead>
+                          <tr>
+                              <th scope="col">Product Name</th>
+                              <th scope="col">Description</th>
                               <th scope="col">Price</th>
-                              <th scope="col">Discount </th>
-                              <th scope="col">Sold</th>
-                              <th scope="col" class="text-center">Total Orders</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                              <td>
-                                  <div class="d-flex align-items-center">
-                                      <img src="{% static 'assets/images/product/product-img1.png' %}" alt="" class="flex-shrink-0 me-12 radius-8 me-12">
-                                      <div class="flex-grow-1">
-                                        <h6 class="text-md mb-0 fw-normal">Blue t-shirt</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">Fashion</span>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>$500.00</td>
-                              <td>15%</td> 
-                              <td>300</td>
-                              <td class="text-center"> 
-                                <span class="bg-success-focus text-success-main px-32 py-4 rounded-pill fw-medium text-sm">70</span> 
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                  <div class="d-flex align-items-center">
-                                      <img src="{% static 'assets/images/product/product-img2.png' %}" alt="" class="flex-shrink-0 me-12 radius-8 me-12">
-                                      <div class="flex-grow-1">
-                                        <h6 class="text-md mb-0 fw-normal">Nike Air Shoe</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">Fashion</span>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>$150.00</td>
-                              <td>N/A</td> 
-                              <td>200</td>
-                              <td class="text-center"> 
-                                <span class="bg-success-focus text-success-main px-32 py-4 rounded-pill fw-medium text-sm">70</span> 
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                  <div class="d-flex align-items-center">
-                                      <img src="{% static 'assets/images/product/product-img3.png' %}" alt="" class="flex-shrink-0 me-12 radius-8 me-12">
-                                      <div class="flex-grow-1">
-                                        <h6 class="text-md mb-0 fw-normal">Woman Dresses</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">Fashion</span>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>$300.00</td>
-                              <td>$50.00</td> 
-                              <td>1500</td>
-                              <td class="text-center"> 
-                                <span class="bg-success-focus text-success-main px-32 py-4 rounded-pill fw-medium text-sm">70</span> 
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                  <div class="d-flex align-items-center">
-                                      <img src="{% static 'assets/images/product/product-img4.png' %}" alt="" class="flex-shrink-0 me-12 radius-8 me-12">
-                                      <div class="flex-grow-1">
-                                        <h6 class="text-md mb-0 fw-normal">Smart Watch</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">Fashion</span>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>$400.00</td>
-                              <td>$50.00</td> 
-                              <td>700</td>
-                              <td class="text-center"> 
-                                <span class="bg-success-focus text-success-main px-32 py-4 rounded-pill fw-medium text-sm">70</span> 
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                  <div class="d-flex align-items-center">
-                                      <img src="{% static 'assets/images/product/product-img5.png' %}" alt="" class="flex-shrink-0 me-12 radius-8 me-12">
-                                      <div class="flex-grow-1">
-                                        <h6 class="text-md mb-0 fw-normal">Hoodie Rose</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">Fashion</span>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>$300.00</td>
-                              <td>25%</td> 
-                              <td>500</td>
-                              <td class="text-center"> 
-                                <span class="bg-success-focus text-success-main px-32 py-4 rounded-pill fw-medium text-sm">70</span> 
-                              </td>
-                            </tr>
-                        </tbody>
-                      </table>
+                              <th scope="col">Created</th>
+                          </tr>
+                      </thead>
+                      <tbody id="productTableBody">
+                          <!-- Products will be inserted here by JavaScript -->
+                      </tbody>
+                  </table>
                   </div>
               </div>
           </div>
@@ -1263,12 +1115,10 @@
         </div>
     </div>
     
-  </div>
-
   <footer class="d-footer">
   <div class="row align-items-center justify-content-between">
     <div class="col-auto">
-      <p class="mb-0">© 2024 Inventra. All Rights Reserved.</p>
+      <p class="mb-0">© 2024 Inventra. All Rights Reserved.  <span id="-count"></span></p>
     </div>
 
   </div>
@@ -1298,6 +1148,11 @@
  <script src="{% static 'assets/js/app.js' %}"></script>
  
  <script src="{% static 'assets/js/homeThreeChart.js' %}"></script>
+ <script src="{% static 'assets/js/updateCustomerCount.js' %}"></script>
+ <script src="{% static 'assets/js/orders.js' %}"></script>
+ <script src="{% static 'assets/js/products.js' %}"></script>
+ <script src="{% static 'assets/js/products-count.js' %}"></script>
+ 
 
 </body>
 </html>

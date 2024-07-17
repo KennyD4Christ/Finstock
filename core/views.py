@@ -13,15 +13,19 @@ from .serializers import (
     AddressSerializer
 )
 from users.permissions import CanViewAllProducts, CanManageOrders
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def index_view(request):
 
     return render(request, 'orders.html')
 
+@login_required
 def customer_view(request):
-    return render(request, 'customers.html') 
+    customer_count = Customer.objects.count()
+    return render(request, 'customers.html', {'customer_count':customer_count})
 
+@login_required
 def transactions_view(request):
     return render(request, 'transactions.html') 
 
@@ -49,7 +53,7 @@ class OrderViewSet(viewsets.ModelViewSet):
     """
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
-    permission_classes = [CanManageOrders]
+    permission_classes = [permissions.IsAuthenticated, CanManageOrders]
 
     @action(detail=True, methods=['get'])
     def items(self, request, pk=None):
